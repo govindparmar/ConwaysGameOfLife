@@ -18,7 +18,7 @@ INT APIENTRY wWinMain(
 		return 0;
 	}
 
-	hWnd = CreateWindowExW(WS_EX_OVERLAPPEDWINDOW, g_wszClassName, L"Conway\'s Game of Life", WS_VISIBLE | WS_SYSMENU, 100, 100, GRIDSIZE * 20, GRIDSIZE * 20, NULL, NULL, hInstance, NULL);
+	hWnd = CreateWindowExW(WS_EX_OVERLAPPEDWINDOW, g_wszClassName, L"Conway\'s Game of Life", WS_VISIBLE | WS_SYSMENU, 100, 100, GRIDSIZE * CELLSIZE + CELLSIZE, GRIDSIZE * CELLSIZE + CELLSIZE, NULL, NULL, hInstance, NULL);
 
 	if (hWnd == NULL) 
 	{

@@ -12,12 +12,12 @@ VOID CALLBACK TimerProc(
 {
 	int x, y, nAdj = 0;
 	SelectObject(g_hDC, g_hbrBackground);
-	Rectangle(g_hDC, 0, 0, GRIDSIZE * 20, GRIDSIZE * 20);
+	Rectangle(g_hDC, 0, 0, GRIDSIZE * CELLSIZE, GRIDSIZE * CELLSIZE);
 	SelectObject(g_hDC, g_hbrCell);
 	for (y = 0; y < GRIDSIZE; y++)
 		for (x = 0; x < GRIDSIZE; x++)
 			if (g_aUpdate[y][x] == 1)
-				Rectangle(g_hDC, x * 20, y * 20, x * 20 + 20, y * 20 + 20);
+				Rectangle(g_hDC, x * CELLSIZE, y * CELLSIZE, x * CELLSIZE + CELLSIZE, y * CELLSIZE + CELLSIZE);
 
 	for (y = 0; y < GRIDSIZE; y++)
 		for (x = 0; x < GRIDSIZE; x++)
