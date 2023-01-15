@@ -26,12 +26,29 @@ VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat)
 		break;
 	case L'Q': // quit
 	case L'q':
-		g_fGameRunning = FALSE;
-		if (MessageBoxW(hWnd, L"Really quit?", APP_TITLE, MB_YESNOQUESTION) == IDYES)
+		if (g_fGameRunning)
 		{
-			DestroyWindow(hWnd);
+			g_fGameRunning = FALSE;
+			if (MessageBoxW(hWnd, L"Really quit current game?", APP_TITLE, MB_YESNOQUESTION) == IDYES)
+			{
+				g_fGameRunning = FALSE;
+				KillTimer(hWnd, IDT_TIMER1);
+				MenuScreen();
+			}
+			else
+			{
+				g_fGameRunning = TRUE;
+			}
 		}
-		g_fGameRunning = TRUE;
+		else
+		{
+			if (MessageBoxW(hWnd, L"Really exit program?", APP_TITLE, MB_OK | MB_ICONQUESTION) == IDYES)
+			{
+				g_fGameRunning = FALSE;
+				KillTimer(hWnd, IDT_TIMER1);
+				DestroyWindow(hWnd);
+			}
+		}
 		break;
 	}
 }

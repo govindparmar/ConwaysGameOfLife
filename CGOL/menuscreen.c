@@ -16,6 +16,12 @@ VOID WINAPI MenuScreen()
 	rMenuItem.right = 200;
 	rMenuItem.bottom = 23;
 
+	if (g_pMenuItems != NULL)
+	{
+		HeapFree(hHeap, 0, g_pMenuItems);
+		g_pMenuItems = NULL;
+	}
+
 	g_pMenuItems = (RECT *) HeapAlloc(hHeap, HEAP_ZERO_MEMORY, 2 * sizeof(RECT)); // as in 2 menu items right now
 	if (NULL == g_pMenuItems)
 	{
