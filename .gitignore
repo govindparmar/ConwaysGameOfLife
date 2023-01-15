@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/CGOL/FileContentIndex
+/.vs/CGOL/v17/ipch/AutoPCH
+/.vs/CGOL/v17
+/CGOL/Debug
+/CGOL/Release
+/Debug
+/Release
