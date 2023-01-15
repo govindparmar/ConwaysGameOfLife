@@ -12,14 +12,13 @@ INT APIENTRY wWinMain(
 	HWND hWnd; 
 	MSG Msg; 
 
-	if (RegisterWCEX(hInstance)==(ATOM)0) 
+	if (RegisterWCEX(hInstance) == (ATOM)0) 
 	{
 		MessageBoxW(NULL, L"Window registration failed", L"Error", MB_ICONSTOP | MB_OK);
 		return 0;
 	}
 
 	hWnd = CreateWindowExW(WS_EX_OVERLAPPEDWINDOW, g_wszClassName, L"Conway\'s Game of Life", WS_VISIBLE | WS_SYSMENU, 100, 100, GRIDSIZE * CELLSIZE + CELLSIZE, GRIDSIZE * CELLSIZE + CELLSIZE, NULL, NULL, hInstance, NULL);
-
 	if (hWnd == NULL) 
 	{
 		MessageBoxW(NULL, L"Window creation failed", L"Error", MB_ICONSTOP | MB_OK);
@@ -28,7 +27,7 @@ INT APIENTRY wWinMain(
 
 	ShowWindow(hWnd, SW_SHOW);
 	UpdateWindow(hWnd);
-
+	MenuScreen();
 	while (GetMessageW(&Msg, NULL, 0, 0) > 0) 
 	{ 
 		TranslateMessage(&Msg); 

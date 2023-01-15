@@ -10,9 +10,11 @@ LRESULT CALLBACK WindowProc(
 {
 	switch (Msg)
 	{
+		HANDLE_MSG(hWnd, WM_CHAR, OnChar);
 		HANDLE_MSG(hWnd, WM_CREATE, OnCreate);
 		HANDLE_MSG(hWnd, WM_CLOSE, OnClose);
 		HANDLE_MSG(hWnd, WM_DESTROY, OnDestroy);
+		HANDLE_MSG(hWnd, WM_PAINT, OnPaint);
 	default:
 		return DefWindowProcW(hWnd, Msg, wParam, lParam);
 	}

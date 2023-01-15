@@ -4,5 +4,5 @@ VOID WINAPI OnDestroy(
 	_In_ HWND hWnd
 )
 {
-	PostQuitMessage(0);
+	PostQuitMessage(ERROR_SUCCESS);
 }
