@@ -19,7 +19,9 @@
 #endif
 
 #define APP_TITLE L"Conway\'s Game Of Life"
+#define TIMER_TICK 100
 #define IDT_TIMER1 1001
+#define MB_YESNOQUESTION (MB_YESNO | MB_ICONQUESTION)
 #define EXTERN extern
 #define GRIDSIZE 40
 #define CELLSIZE 10

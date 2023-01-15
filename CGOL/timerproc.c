@@ -18,13 +18,23 @@ VOID CALLBACK TimerProc(
 		Rectangle(g_hDC, 0, 0, GRIDSIZE * CELLSIZE, GRIDSIZE * CELLSIZE);
 		SelectObject(g_hDC, g_hbrCell);
 		for (y = 0; y < GRIDSIZE; y++)
+		{
 			for (x = 0; x < GRIDSIZE; x++)
+			{
 				if (g_aUpdate[y][x] == 1)
+				{
 					Rectangle(g_hDC, x * CELLSIZE, y * CELLSIZE, x * CELLSIZE + CELLSIZE, y * CELLSIZE + CELLSIZE);
+				}
+			}
+		}
 
 		for (y = 0; y < GRIDSIZE; y++)
+		{
 			for (x = 0; x < GRIDSIZE; x++)
+			{
 				g_aGrid[y][x] = g_aUpdate[y][x];
+			}
+		}
 
 
 		for (y = 1; y < GRIDSIZE - 1; y++)

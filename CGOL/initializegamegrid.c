@@ -20,5 +20,5 @@ VOID WINAPI InitializeGameGrid (_In_ HWND hWnd)
 			g_aUpdate[y][x] = g_aGrid[y][x];
 		}
 	}
-	SetTimer(hWnd, IDT_TIMER1, 100, TimerProc);
+	SetTimer(hWnd, IDT_TIMER1, TIMER_TICK, TimerProc);
 }
