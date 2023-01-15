@@ -142,11 +142,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="initializegamegrid.c" />
+    <ClCompile Include="iswithinrect.c" />
     <ClCompile Include="menuscreen.c" />
     <ClCompile Include="onchar.c" />
     <ClCompile Include="onclose.c" />
     <ClCompile Include="oncreate.c" />
     <ClCompile Include="ondestroy.c" />
+    <ClCompile Include="onlbuttondown.c" />
+    <ClCompile Include="onmousemove.c" />
     <ClCompile Include="onpaint.c" />
     <ClCompile Include="registerwcex.c" />
     <ClCompile Include="timerproc.c" />

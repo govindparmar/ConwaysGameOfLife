@@ -33,13 +33,21 @@ EXTERN HDC g_hDC;
 EXTERN HBRUSH g_hbrCell;
 EXTERN HBRUSH g_hbrBackground;
 EXTERN BOOL g_fGameRunning;
+EXTERN RECT *g_pMenuItems;
 
 VOID WINAPI InitializeGameGrid(_In_ HWND hWnd);
+
+_Ret_range_(FALSE, TRUE)
+
+BOOL WINAPI IsWithinRect(_In_ RECT rect, _In_ INT x, _In_ INT y);
+
 VOID WINAPI MenuScreen();
 VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat);
 VOID WINAPI OnClose(_In_ HWND hWnd);
 VOID WINAPI OnDestroy(_In_ HWND hWnd);
 BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
+VOID WINAPI OnLButtonDown(_In_ HWND hwnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
+VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
 VOID WINAPI OnPaint(_In_ HWND hWnd);
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
 VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime);
