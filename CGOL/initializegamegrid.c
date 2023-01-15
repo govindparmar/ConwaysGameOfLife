@@ -14,7 +14,11 @@ VOID WINAPI InitializeGameGrid (_In_ HWND hWnd)
 		}
 	}
 	for (y = 0; y < GRIDSIZE; y++)
+	{
 		for (x = 0; x < GRIDSIZE; x++)
+		{
 			g_aUpdate[y][x] = g_aGrid[y][x];
+		}
+	}
 	SetTimer(hWnd, IDT_TIMER1, 100, TimerProc);
 }
