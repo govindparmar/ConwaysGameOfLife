@@ -73,7 +73,7 @@ BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND
 	ZeroMemory(g_aUpdate, sizeof(INT) * GRIDSIZE * GRIDSIZE);
 	for (i = 0; i < bfh.wNumberCells; i++)
 	{
-		g_aUpdate[pCoords[i].bX][pCoords[i].bY] = 1;
+		g_aUpdate[pCoords[i].bY][pCoords[i].bX] = 1;
 	}
 
 	GetClientRect(hWnd, &rect);

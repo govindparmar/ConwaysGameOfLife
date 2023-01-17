@@ -66,7 +66,7 @@ EXTERN CONST WCHAR g_wszClassName[];
 EXTERN WCHAR g_wszFileName[MAX_PATH];
 EXTERN BOOL g_fTouched;
 EXTERN BOOL g_fFileOpen;
-
+EXTERN HBRUSH g_hbrFilled, g_hbrEmpty;
 #ifdef __cplusplus
 }
 #endif
