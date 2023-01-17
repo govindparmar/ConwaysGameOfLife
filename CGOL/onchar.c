@@ -2,6 +2,8 @@
 
 VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat)
 {
+	CONST HANDLE hHeap = GetProcessHeap();
+
 	switch (wc)
 	{
 	case L'G': // new game
@@ -31,6 +33,7 @@ VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat)
 			g_fGameRunning = FALSE;
 			if (MessageBoxW(hWnd, L"Really quit current game?", APP_TITLE, MB_YESNOQUESTION) == IDYES)
 			{
+
 				g_fGameRunning = FALSE;
 				KillTimer(hWnd, IDT_TIMER1);
 				MenuScreen();

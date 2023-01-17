@@ -1,7 +1,6 @@
 #include "CGOL.h"
 
 HDC g_hDC;
-
 BOOL g_fGameRunning = FALSE;
 
 VOID CALLBACK TimerProc(
@@ -11,9 +10,17 @@ VOID CALLBACK TimerProc(
 	_In_ DWORD dwTime
 )
 {
+	INT x, y, nAdj = 0;
 	if (g_fGameRunning)
 	{
-		int x, y, nAdj = 0;
+		if (g_pMenuItems != NULL)
+		{
+			CONST HANDLE hHeap = GetProcessHeap();
+			HeapFree(hHeap, 0, g_pMenuItems);
+			g_pMenuItems = NULL;
+		}
+
+
 		SelectObject(g_hDC, g_hbrBackground);
 		Rectangle(g_hDC, 0, 0, GRIDSIZE * CELLSIZE, GRIDSIZE * CELLSIZE);
 		SelectObject(g_hDC, g_hbrCell);

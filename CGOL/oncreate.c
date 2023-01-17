@@ -15,7 +15,7 @@ BOOL WINAPI OnCreate(
 	iccx.dwSize = sizeof(INITCOMMONCONTROLSEX);
 
 	g_hbrCell = CreateSolidBrush(RGB(0, 255, 0));
-	g_hbrBackground = CreateSolidBrush(RGB(0, 0, 0));
+	g_hbrBackground = CreateSolidBrush(0);
 	srand((UINT)time(NULL));
 	InitCommonControlsEx(&iccx);
 	g_hDC = GetDC(hWnd);

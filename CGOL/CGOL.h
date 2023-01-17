@@ -6,6 +6,7 @@
 #include <time.h>
 #include <strsafe.h>
 #include <sal.h>
+#include "..\Common\GameBoard.h"
 
 
 #if defined _M_IX86
@@ -23,8 +24,6 @@
 #define IDT_TIMER1 1001
 #define MB_YESNOQUESTION (MB_YESNO | MB_ICONQUESTION)
 #define EXTERN extern
-#define GRIDSIZE 40
-#define CELLSIZE 10
 
 EXTERN CONST WCHAR g_wszClassName[];
 EXTERN INT g_aGrid[GRIDSIZE][GRIDSIZE];

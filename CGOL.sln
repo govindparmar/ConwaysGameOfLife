@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CGOL", "CGOL\CGOL.vcxproj", "{2BE1A567-B762-4C62-ABD5-7C1C2FCBD7FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoardEditor", "BoardEditor\BoardEditor.vcxproj", "{6115F21A-F5A7-4871-9809-44E542BE7EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,19 @@ Global
 		{2BE1A567-B762-4C62-ABD5-7C1C2FCBD7FA}.Release|x64.Build.0 = Release|x64
 		{2BE1A567-B762-4C62-ABD5-7C1C2FCBD7FA}.Release|x86.ActiveCfg = Release|Win32
 		{2BE1A567-B762-4C62-ABD5-7C1C2FCBD7FA}.Release|x86.Build.0 = Release|Win32
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Debug|x64.ActiveCfg = Debug|x64
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Debug|x64.Build.0 = Debug|x64
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Debug|x86.ActiveCfg = Debug|Win32
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Debug|x86.Build.0 = Debug|Win32
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x64.ActiveCfg = Release|x64
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x64.Build.0 = Release|x64
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x86.ActiveCfg = Release|Win32
+		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BA6552D-A0C6-4135-A9C4-A1157C4E85AC}
 	EndGlobalSection
 EndGlobal
