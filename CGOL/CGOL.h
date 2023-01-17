@@ -39,8 +39,10 @@ extern "C"
 	EXTERN BOOL g_fGameRunning;
 	EXTERN RECT *g_pMenuItems;
 
-	HRESULT WINAPI BasicFileOpen(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName);
+	_Success_(SUCCEEDED(return))
 
+	HRESULT WINAPI BasicFileOpen(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName);
+	
 	VOID WINAPI InitializeGameGrid(_In_ HWND hWnd);
 
 	_Ret_range_(FALSE, TRUE)
