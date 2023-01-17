@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="deserializegrid.c" />
+    <ClCompile Include="dialogproc.c" />
     <ClCompile Include="drawgrid.c" />
     <ClCompile Include="enumchildproc.c" />
     <ClCompile Include="gettotalbytesneeded.c" />

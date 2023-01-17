@@ -38,6 +38,7 @@ extern "C"
 	EXTERN HBRUSH g_hbrBackground;
 	EXTERN BOOL g_fGameRunning;
 	EXTERN RECT *g_pMenuItems;
+	EXTERN RECT g_clientRect;
 
 	_Success_(SUCCEEDED(return))
 

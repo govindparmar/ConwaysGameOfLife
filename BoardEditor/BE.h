@@ -39,6 +39,12 @@ _Success_(SUCCEEDED(return))
 
 HRESULT WINAPI BasicFileSave(_Out_writes_z_(MAX_PATH) WCHAR * pSaveFileName);
 DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *wszFileName);
+INT_PTR CALLBACK DialogProc(
+	_In_ HWND hDlg,
+	_In_ UINT Msg,
+	_In_ WPARAM wParam,
+	_In_ LPARAM lParam
+);
 VOID WINAPI DrawGrid(_In_ HWND hWnd);
 BOOL CALLBACK EnumChildProc(
 	_In_ HWND hWnd,

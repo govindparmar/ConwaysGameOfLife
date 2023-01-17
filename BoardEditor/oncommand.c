@@ -121,6 +121,11 @@ VOID WINAPI OnCommand(
 		}
 	}
 
+	if (ID_HELP_ABOUT == nID)
+	{
+		DialogBoxW(GetModuleHandleW(NULL), MAKEINTRESOURCEW(IDD_ABOUT), hWnd, DialogProc);
+	}
+
 	if (g_wszFileName[0] != L'\0')
 	{
 		WCHAR wszTitle[MAX_PATH + 100];

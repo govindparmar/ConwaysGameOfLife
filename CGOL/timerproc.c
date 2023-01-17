@@ -20,9 +20,9 @@ VOID CALLBACK TimerProc(
 			g_pMenuItems = NULL;
 		}
 
-
+		
 		SelectObject(g_hDC, g_hbrBackground);
-		Rectangle(g_hDC, 0, 0, GRIDSIZE * CELLSIZE, GRIDSIZE * CELLSIZE);
+		Rectangle(g_hDC, 0, 0, g_clientRect.right, g_clientRect.bottom);
 		SelectObject(g_hDC, g_hbrCell);
 		for (y = 0; y < GRIDSIZE; y++)
 		{

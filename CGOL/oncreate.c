@@ -4,6 +4,7 @@ HBRUSH g_hbrCell;
 HBRUSH g_hbrBackground;
 INT g_aGrid[GRIDSIZE][GRIDSIZE];
 INT g_aUpdate[GRIDSIZE][GRIDSIZE];
+RECT g_clientRect;
 
 BOOL WINAPI OnCreate(
 	_In_ HWND hWnd, 
@@ -19,5 +20,6 @@ BOOL WINAPI OnCreate(
 	srand((UINT)time(NULL));
 	InitCommonControlsEx(&iccx);
 	g_hDC = GetDC(hWnd);
+	GetClientRect(hWnd, &g_clientRect);
 	return TRUE;
 }

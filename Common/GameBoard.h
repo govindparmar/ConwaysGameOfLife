@@ -6,16 +6,16 @@
 #ifndef CELLSIZE
 #define CELLSIZE 12
 #endif
-#pragma pack(push, 1)
 #ifndef B4TODW_LE
 #define B4TODW_LE(c0, c1, c2, c3) (uint32_t) ((uint32_t) (uint8_t) (c0) | ((uint32_t) (uint8_t) (c1) << 8) | ((uint32_t) (uint8_t) (c2) << 16) | ((uint32_t) (uint8_t) (c3) << 24))
 #endif
+#pragma pack(push, 1)
 typedef struct
 {
 	uint16_t wSig;     // 0x07 0x02 = Govind Board
 	uint16_t wVersion; // This version 0x0001
 	uint8_t bGridSize; // Grid size
-	uint16_t wNumberCells; // Number of cells in the file
+	uint32_t wNumberCells; // Number of cells in the file
 } BOARDFILEHEADER, *PBOARDFILEHEADER;
 
 typedef struct
