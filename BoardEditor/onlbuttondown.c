@@ -28,7 +28,6 @@ VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _I
 	}
 	if (fRedraw)
 	{
-		
 		rect.top = (yCell * CELLSIZE) - 1;
 		rect.left = (xCell * CELLSIZE) - 1;
 		rect.bottom = (yCell * CELLSIZE) + CELLSIZE + 1;
