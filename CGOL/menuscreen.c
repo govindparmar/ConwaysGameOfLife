@@ -22,7 +22,7 @@ VOID WINAPI MenuScreen()
 		g_pMenuItems = NULL;
 	}
 
-	g_pMenuItems = (RECT *) HeapAlloc(hHeap, HEAP_ZERO_MEMORY, 2 * sizeof(RECT)); // as in 2 menu items right now
+	g_pMenuItems = (RECT *) HeapAlloc(hHeap, HEAP_ZERO_MEMORY, 3 * sizeof(RECT)); // as in 2 menu items right now
 	if (NULL == g_pMenuItems)
 	{
 		MessageBoxW(NULL, L"Out of memory", APP_TITLE, MB_OK | MB_ICONSTOP);
@@ -41,7 +41,10 @@ VOID WINAPI MenuScreen()
 	ExtTextOutW(g_hDC, 10, 10, ETO_CLIPPED , &rMenuItem, L"G = New Game", 12, NULL);
 	CopyMemory(&g_pMenuItems[0], &rMenuItem, sizeof(RECT));
 	rMenuItem.bottom += 30;
-	ExtTextOutW(g_hDC, 10, 40, ETO_CLIPPED , &rMenuItem, L"Q = Quit", 8, NULL);
+	ExtTextOutW(g_hDC, 10, 40, ETO_CLIPPED, &rMenuItem, L"L = Load Game Grid", 18, NULL);
 	CopyMemory(&g_pMenuItems[1], &rMenuItem, sizeof(RECT));
+	rMenuItem.bottom += 30;
+	ExtTextOutW(g_hDC, 10, 70, ETO_CLIPPED , &rMenuItem, L"Q = Quit", 8, NULL);
+	CopyMemory(&g_pMenuItems[2], &rMenuItem, sizeof(RECT));
 	
 }

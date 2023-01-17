@@ -6,6 +6,11 @@ VOID WINAPI DrawGrid(_In_ HWND hWnd)
 	INT i, i2;
 	RECT r;
 	HBRUSH hBr;
+	HBRUSH hbrFilled, hbrEmpty;
+
+	hbrFilled = CreateSolidBrush(RGB(0x00, 0x6D, 0xA5));
+	hbrEmpty = CreateSolidBrush(RGB(0xFF, 0xFF, 0xFF));
+
 	GetClientRect(hWnd, &r);
 	for (i = CELLSIZE; i <= (GRIDSIZE * CELLSIZE) - CELLSIZE; i += CELLSIZE)
 	{
@@ -20,16 +25,18 @@ VOID WINAPI DrawGrid(_In_ HWND hWnd)
 		{
 			if (g_nCells[i][i2])
 			{
-				hBr = CreateSolidBrush(RGB(0, 0x6D, 0xA5));
-				SelectObject(hDC, hBr);
+				SelectObject(hDC, hbrFilled);
 				Rectangle(hDC, i * CELLSIZE, i2 * CELLSIZE, i * CELLSIZE + CELLSIZE, i2 * CELLSIZE + CELLSIZE);
-				hBr = CreateSolidBrush(RGB(0xFF, 0xFF, 0xFF));
-				SelectObject(hDC, hBr);
+
 			}
 			else
 			{
+				SelectObject(hDC, hbrEmpty);
 				Rectangle(hDC, i * CELLSIZE, i2 * CELLSIZE, i * CELLSIZE + CELLSIZE, i2 * CELLSIZE + CELLSIZE);
 			}
 		}
 	}
+
+	DeleteObject(hbrFilled);
+	DeleteObject(hbrEmpty);
 }

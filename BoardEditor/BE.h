@@ -24,10 +24,22 @@
 #define EXTERN extern
 #define APP_TITLE L"Game of Life Board Editor"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 EXTERN INT g_nCells[GRIDSIZE][GRIDSIZE];
 
-VOID WINAPI DrawGrid(_In_ HWND hWnd);
+_Success_(SUCCEEDED(return))
 
+HRESULT WINAPI BasicFileOpen(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName);
+
+_Success_(SUCCEEDED(return))
+
+HRESULT WINAPI BasicFileSave(_Out_writes_z_(MAX_PATH) WCHAR * pSaveFileName);
+DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *wszFileName);
+VOID WINAPI DrawGrid(_In_ HWND hWnd);
 BOOL CALLBACK EnumChildProc(
 	_In_ HWND hWnd,
 	_In_ LPARAM lParam
@@ -44,9 +56,17 @@ VOID WINAPI OnDestroy(_In_ HWND hWnd);
 VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
 VOID WINAPI OnPaint(_In_ HWND hWnd);
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
+VOID WINAPI ResetBoardAndFile(_In_ HWND hWnd);
+BOOL WINAPI SaveBoardToFile(_In_ BOOL fSkipNamingIfPossible);
+DWORD WINAPI SerializeGrid(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName);
 LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);
 INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nShowCmd);
 
 EXTERN CONST WCHAR g_wszClassName[];
-EXTERN WCHAR g_wszFileName[];
+EXTERN WCHAR g_wszFileName[MAX_PATH];
 EXTERN BOOL g_fTouched;
+EXTERN BOOL g_fFileOpen;
+
+#ifdef __cplusplus
+}
+#endif

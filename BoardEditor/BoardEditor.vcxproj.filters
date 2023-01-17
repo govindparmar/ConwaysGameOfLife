@@ -59,6 +59,21 @@
     <ClCompile Include="gettotalbytesneeded.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="serializegrid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="openfiledialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deserializegrid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="resetboardandfile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saveboardtofile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">

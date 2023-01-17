@@ -26,6 +26,19 @@ VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat)
 			g_fGameRunning = TRUE;
 		}
 		break;
+	case L'L':
+	case L'l': // Load grid file
+	{
+		WCHAR wszFileName[MAX_PATH];
+		if (SUCCEEDED(BasicFileOpen(wszFileName)))
+		{
+			if (LoadGridFile(wszFileName, hWnd))
+			{
+				g_fGameRunning = TRUE;
+			}
+		}
+	}
+		break;
 	case L'Q': // quit
 	case L'q':
 		if (g_fGameRunning)
@@ -45,7 +58,7 @@ VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat)
 		}
 		else
 		{
-			if (MessageBoxW(hWnd, L"Really exit program?", APP_TITLE, MB_OK | MB_ICONQUESTION) == IDYES)
+			if (MessageBoxW(hWnd, L"Really quit?", APP_TITLE, MB_YESNOQUESTION) == IDYES)
 			{
 				g_fGameRunning = FALSE;
 				KillTimer(hWnd, IDT_TIMER1);

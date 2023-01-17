@@ -25,30 +25,41 @@
 #define MB_YESNOQUESTION (MB_YESNO | MB_ICONQUESTION)
 #define EXTERN extern
 
-EXTERN CONST WCHAR g_wszClassName[];
-EXTERN INT g_aGrid[GRIDSIZE][GRIDSIZE];
-EXTERN INT g_aUpdate[GRIDSIZE][GRIDSIZE];
-EXTERN HDC g_hDC;
-EXTERN HBRUSH g_hbrCell;
-EXTERN HBRUSH g_hbrBackground;
-EXTERN BOOL g_fGameRunning;
-EXTERN RECT *g_pMenuItems;
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
-VOID WINAPI InitializeGameGrid(_In_ HWND hWnd);
+	EXTERN CONST WCHAR g_wszClassName[];
+	EXTERN INT g_aGrid[GRIDSIZE][GRIDSIZE];
+	EXTERN INT g_aUpdate[GRIDSIZE][GRIDSIZE];
+	EXTERN HDC g_hDC;
+	EXTERN HBRUSH g_hbrCell;
+	EXTERN HBRUSH g_hbrBackground;
+	EXTERN BOOL g_fGameRunning;
+	EXTERN RECT *g_pMenuItems;
 
-_Ret_range_(FALSE, TRUE)
+	HRESULT WINAPI BasicFileOpen(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName);
 
-BOOL WINAPI IsWithinRect(_In_ RECT rect, _In_ INT x, _In_ INT y);
+	VOID WINAPI InitializeGameGrid(_In_ HWND hWnd);
 
-VOID WINAPI MenuScreen();
-VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat);
-VOID WINAPI OnClose(_In_ HWND hWnd);
-VOID WINAPI OnDestroy(_In_ HWND hWnd);
-BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
-VOID WINAPI OnLButtonDown(_In_ HWND hwnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
-VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
-VOID WINAPI OnPaint(_In_ HWND hWnd);
-ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
-VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime);
-LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);
-INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nShowCmd);
+	_Ret_range_(FALSE, TRUE)
+
+	BOOL WINAPI IsWithinRect(_In_ RECT rect, _In_ INT x, _In_ INT y);
+	BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND hWnd); // 2nd param for GetClientRect call;
+	VOID WINAPI MenuScreen();
+	VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat);
+	VOID WINAPI OnClose(_In_ HWND hWnd);
+	VOID WINAPI OnDestroy(_In_ HWND hWnd);
+	BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
+	VOID WINAPI OnLButtonDown(_In_ HWND hwnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
+	VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
+	VOID WINAPI OnPaint(_In_ HWND hWnd);
+	ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
+	VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime);
+	LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);
+	INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nShowCmd);
+
+#ifdef __cplusplus
+}
+#endif
