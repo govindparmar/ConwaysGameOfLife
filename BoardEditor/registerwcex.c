@@ -15,6 +15,7 @@ ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance)
 	wcex.hInstance = hInstance;
 	wcex.lpfnWndProc = WindowProc;
 	wcex.lpszClassName = g_wszClassName;
+	wcex.lpszMenuName = MAKEINTRESOURCEW(IDM_MAINWINDOW);
 
 	return RegisterClassExW(&wcex);
 }

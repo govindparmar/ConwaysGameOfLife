@@ -18,7 +18,7 @@ INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 		return 0;
 	}
 
-	hWnd = CreateWindowExW(WS_EX_OVERLAPPEDWINDOW, g_wszClassName, APP_TITLE, WS_VISIBLE | WS_SYSMENU, 100, 100, (GRIDSIZE * CELLSIZE) + CELLSIZE + 10, (GRIDSIZE * CELLSIZE) + CELLSIZE + 33, NULL, NULL, hInstance, NULL);
+	hWnd = CreateWindowExW(WS_EX_OVERLAPPEDWINDOW, g_wszClassName, APP_TITLE, WS_VISIBLE | WS_SYSMENU, 100, 100, (GRIDSIZE * CELLSIZE) + CELLSIZE + 10, (GRIDSIZE * CELLSIZE) + CELLSIZE + 53, NULL, NULL, hInstance, NULL);
 	if (hWnd == NULL)
 	{
 		MessageBoxW(NULL, L"Window creation failed", L"Error", MB_ICONSTOP | MB_OK);

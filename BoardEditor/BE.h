@@ -4,8 +4,10 @@
 #include <CommCtrl.h>
 #include <stdlib.h>
 #include <time.h>
+#include <limits.h>
 #include <strsafe.h>
 #include <sal.h>
+#include "resource.h"
 #include "..\Common\GameBoard.h"
 
 
@@ -46,3 +48,5 @@ LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _
 INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nShowCmd);
 
 EXTERN CONST WCHAR g_wszClassName[];
+EXTERN WCHAR g_wszFileName[];
+EXTERN BOOL g_fTouched;

@@ -56,6 +56,9 @@
     <ClCompile Include="onlbuttondown.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gettotalbytesneeded.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">

@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 #ifndef GRIDSIZE
-#define GRIDSIZE 48
+#define GRIDSIZE 40
 #endif
 #ifndef CELLSIZE
 #define CELLSIZE 12
