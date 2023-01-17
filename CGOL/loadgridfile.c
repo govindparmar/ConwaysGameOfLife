@@ -82,6 +82,16 @@ BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND
 	dwError = ERROR_SUCCESS;
 
 cleanup:
+	if (pCoords != NULL)
+	{
+		HeapFree(hHeap, 0, pCoords);
+		pCoords = NULL;
+	}
+	if (hFile != INVALID_HANDLE_VALUE)
+	{
+		CloseHandle(hFile);
+	}
+
 	SetLastError(dwError);
 	return ERROR_SUCCESS == dwError;
 }
