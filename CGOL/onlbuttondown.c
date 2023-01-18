@@ -9,7 +9,7 @@ VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _I
 			InitializeGameGrid(hWnd);
 			g_fGameRunning = TRUE;
 		}
-		else if (IsWithinRect(g_pMenuItems[1], x, y))
+		else if (IsWithinRect(g_pMenuItems[1], x, y)) // Load GGL file
 		{
 			//MessageBoxW(hWnd, L"Not yet implemented", APP_TITLE, MB_OK | MB_ICONWARNING);
 			WCHAR wszFileName[MAX_PATH];
@@ -21,7 +21,7 @@ VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _I
 				}
 			}
 		}
-		else if (IsWithinRect(g_pMenuItems[2], x, y))
+		else if (IsWithinRect(g_pMenuItems[2], x, y)) // Quit program
 		{
 			if (MessageBoxW(hWnd, L"Really quit?", APP_TITLE, MB_YESNOQUESTION) == IDYES)
 			{

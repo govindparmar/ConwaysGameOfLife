@@ -5,7 +5,7 @@ BOOL CALLBACK EnumChildProc(
 	_In_ LPARAM lParam
 )
 {
-	HFONT hfDefault = *(HFONT *) lParam;
-	SendMessageW(hWnd, WM_SETFONT, (WPARAM) hfDefault, MAKELPARAM(TRUE, 0));
+	HFONT hfDefault = *(HFONT *)lParam;
+	SendMessageW(hWnd, WM_SETFONT, (WPARAM)hfDefault, MAKELPARAM(TRUE, 0));
 	return TRUE;
 }

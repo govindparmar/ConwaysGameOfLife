@@ -2,6 +2,7 @@
 
 HBRUSH g_hbrFilled = NULL;
 HBRUSH g_hbrEmpty = NULL;
+HBRUSH g_hbrEmptyAlternate = NULL;
 
 VOID WINAPI DrawGrid(_In_ HWND hWnd)
 {
@@ -16,6 +17,10 @@ VOID WINAPI DrawGrid(_In_ HWND hWnd)
 	if (NULL == g_hbrEmpty)
 	{
 		g_hbrEmpty = CreateSolidBrush(RGB(0xFF, 0xFF, 0xFF));
+	}
+	if (NULL == g_hbrEmptyAlternate)
+	{
+		g_hbrEmptyAlternate = CreateSolidBrush(RGB(0xEF, 0xEF, 0xEF));
 	}
 
 	GetClientRect(hWnd, &r);
@@ -38,7 +43,7 @@ VOID WINAPI DrawGrid(_In_ HWND hWnd)
 			}
 			else
 			{
-				SelectObject(hDC, g_hbrEmpty);
+				SelectObject(hDC, ((i + i2) % 2) == 0 ? g_hbrEmpty : g_hbrEmptyAlternate);
 				Rectangle(hDC, i * CELLSIZE, i2 * CELLSIZE, i * CELLSIZE + CELLSIZE, i2 * CELLSIZE + CELLSIZE);
 			}
 		}

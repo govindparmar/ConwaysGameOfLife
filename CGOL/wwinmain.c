@@ -28,10 +28,13 @@ INT APIENTRY wWinMain(
 	ShowWindow(hWnd, SW_SHOW);
 	UpdateWindow(hWnd);
 	MenuScreen();
-	while (GetMessageW(&Msg, NULL, 0, 0) > 0) 
-	{ 
-		TranslateMessage(&Msg); 
-		DispatchMessageW(&Msg); 
+	while (GetMessageW(&Msg, NULL, 0, 0) > 0)
+	{
+		if (!IsDialogMessageW(hWnd, &Msg))
+		{
+			TranslateMessage(&Msg);
+			DispatchMessageW(&Msg);
+		}
 	}
 	return Msg.wParam;
 }
