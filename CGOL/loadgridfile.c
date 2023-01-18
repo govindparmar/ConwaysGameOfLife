@@ -78,7 +78,7 @@ BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND
 
 	GetClientRect(hWnd, &rect);
 	RedrawWindow(hWnd, &rect, NULL, RDW_INVALIDATE);
-	SetTimer(hWnd, IDT_TIMER1, 100, TimerProc);
+	SetTimer(hWnd, IDT_TIMER1, TIMER_TICK, TimerProc);
 	dwError = ERROR_SUCCESS;
 
 cleanup:
