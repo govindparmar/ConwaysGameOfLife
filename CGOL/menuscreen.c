@@ -22,7 +22,7 @@ VOID WINAPI MenuScreen()
 		g_pMenuItems = NULL;
 	}
 
-	g_pMenuItems = (RECT *) HeapAlloc(hHeap, HEAP_ZERO_MEMORY, 3 * sizeof(RECT)); // as in 2 menu items right now
+	g_pMenuItems = (RECT *) HeapAlloc(hHeap, HEAP_ZERO_MEMORY, 3 * sizeof(RECT)); // as in 3 menu items right now
 	if (NULL == g_pMenuItems)
 	{
 		MessageBoxW(NULL, L"Out of memory", APP_TITLE, MB_OK | MB_ICONSTOP);
