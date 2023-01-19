@@ -20,7 +20,7 @@ VOID WINAPI DrawGrid(_In_ HWND hWnd)
 	}
 	if (NULL == g_hbrEmptyAlternate)
 	{
-		g_hbrEmptyAlternate = CreateSolidBrush(RGB(0xEF, 0xEF, 0xEF));
+		g_hbrEmptyAlternate = CreateSolidBrush(RGB(0xDF, 0xDF, 0xDF));
 	}
 
 	GetClientRect(hWnd, &r);
