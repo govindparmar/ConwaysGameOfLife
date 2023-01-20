@@ -154,7 +154,7 @@
     <ClCompile Include="onlbuttondown.c" />
     <ClCompile Include="onmousemove.c" />
     <ClCompile Include="onpaint.c" />
-    <ClCompile Include="openfiledialog.cpp" />
+    <ClCompile Include="openboard.c" />
     <ClCompile Include="registerwcex.c" />
     <ClCompile Include="timerproc.c" />
     <ClCompile Include="windowproc.c" />

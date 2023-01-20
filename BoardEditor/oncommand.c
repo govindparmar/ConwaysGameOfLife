@@ -1,5 +1,6 @@
 #include "BE.h"
 
+typedef HRESULT(WINAPI *pOpenGGLFile)(_Out_writes_z_(MAX_PATH) WCHAR *wszFileName);
 WCHAR g_wszFileName[MAX_PATH] = { L'\0' };
 
 VOID WINAPI OnCommand(
@@ -26,72 +27,45 @@ VOID WINAPI OnCommand(
 
 	if (ID_FILE_OPEN == nID)
 	{
+		HINSTANCE hInstDLL = NULL;
+		pOpenGGLFile OpenGGLFile = NULL;
 		WCHAR wszOpenFile[MAX_PATH];
 		DWORD dwError;
 
-		BasicFileOpen(wszOpenFile);
+		hInstDLL = LoadLibraryW(L"FileDialogs.dll");
+		if (NULL == hInstDLL)
+		{
+			dwError = GetLastError();
+			MessageBoxW(NULL, L"Could not launch the open file dialog because the library FileDialogs.dll was not found", APP_TITLE, MB_OK | MB_ICONSTOP);
+			//ExitProcess(dwError);
+			return;
+		}
+
+		OpenGGLFile = (pOpenGGLFile) GetProcAddress(hInstDLL, "OpenGGLFile");
+		if (NULL == OpenGGLFile)
+		{
+			dwError = GetLastError();
+			MessageBoxW(NULL, L"Could not find the procedure 'OpenGGLFile' in the library FileDialogs.dll", APP_TITLE, MB_OK | MB_ICONSTOP);
+			FreeLibrary(hInstDLL);
+			return;
+		}
+
+		OpenGGLFile(wszOpenFile);
 		dwError = DeserializeGrid(hWnd, wszOpenFile);
 		if (dwError != ERROR_SUCCESS)
 		{
-			MessageBoxW(NULL, L"Failed to open file", APP_TITLE, MB_OK | MB_ICONSTOP);
+			MessageBoxW(NULL, L"Failed to read grid file", APP_TITLE, MB_OK | MB_ICONSTOP);
 		}
 		StringCchCopyW(g_wszFileName, MAX_PATH, wszOpenFile);
 	}
 
 	if (ID_FILE_SAVE == nID)
 	{
-		/*DWORD dwError;
-		if (L'\0' == g_wszFileName[0])
-		{
-			WCHAR wszSaveFile[MAX_PATH];
-			if (FAILED(BasicFileSave(wszSaveFile)))
-			{
-				MessageBoxW(NULL, L"Could not save the file", APP_TITLE, MB_OK | MB_ICONSTOP);
-			}			
-			dwError = SerializeGrid(wszSaveFile);
-			if (dwError != ERROR_SUCCESS)
-			{
-				MessageBoxW(NULL, L"Could not save the file", APP_TITLE, MB_OK | MB_ICONSTOP);
-			}
-			else
-			{
-				g_fTouched = FALSE;
-				StringCchCopyW(g_wszFileName, MAX_PATH, wszSaveFile);
-			}
-		}
-		else
-		{
-			dwError = SerializeGrid(g_wszFileName);
-			if (dwError != ERROR_SUCCESS)
-			{
-				MessageBoxW(NULL, L"Could not save the file", APP_TITLE, MB_OK | MB_ICONSTOP);
-			}
-			else
-			{
-				g_fTouched = FALSE;
-			}
-		}*/
 		SaveBoardToFile(TRUE);
 	}
 
 	if (ID_FILE_SAVEAS == nID)
 	{
-		/*DWORD dwError;
-		WCHAR wszSaveFile[MAX_PATH];
-		if (FAILED(BasicFileSave(wszSaveFile)))
-		{
-			MessageBoxW(NULL, L"Could not save the file", APP_TITLE, MB_OK | MB_ICONSTOP);
-		}
-		dwError = SerializeGrid(wszSaveFile);
-		if (dwError != ERROR_SUCCESS)
-		{
-			MessageBoxW(NULL, L"Could not save the file", APP_TITLE, MB_OK | MB_ICONSTOP);
-		}
-		else
-		{
-			g_fTouched = FALSE;
-			StringCchCopyW(g_wszFileName, MAX_PATH, wszSaveFile);
-		}*/
 		SaveBoardToFile(FALSE);
 	}
 

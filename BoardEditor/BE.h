@@ -24,20 +24,9 @@
 #define EXTERN extern
 #define APP_TITLE L"Game of Life Board Editor"
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
+
 
 EXTERN INT g_nCells[GRIDSIZE][GRIDSIZE];
-
-_Success_(SUCCEEDED(return))
-
-HRESULT WINAPI BasicFileOpen(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName);
-
-_Success_(SUCCEEDED(return))
-
-HRESULT WINAPI BasicFileSave(_Out_writes_z_(MAX_PATH) WCHAR * pSaveFileName);
 DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *wszFileName);
 INT_PTR CALLBACK DialogProc(
 	_In_ HWND hDlg,
@@ -73,6 +62,3 @@ EXTERN WCHAR g_wszFileName[MAX_PATH];
 EXTERN BOOL g_fTouched;
 EXTERN BOOL g_fFileOpen;
 EXTERN HBRUSH g_hbrFilled, g_hbrEmpty;
-#ifdef __cplusplus
-}
-#endif

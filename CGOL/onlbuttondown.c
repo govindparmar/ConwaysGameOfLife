@@ -12,13 +12,18 @@ VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _I
 		else if (IsWithinRect(g_pMenuItems[1], x, y)) // Load GGL file
 		{
 			//MessageBoxW(hWnd, L"Not yet implemented", APP_TITLE, MB_OK | MB_ICONWARNING);
-			WCHAR wszFileName[MAX_PATH];
+			/*WCHAR wszFileName[MAX_PATH];
 			if (SUCCEEDED(BasicFileOpen(wszFileName)))
 			{
 				if (LoadGridFile(wszFileName, hWnd))
 				{
 					g_fGameRunning = TRUE;
 				}
+			}*/
+
+			if (OpenBoard(hWnd) != ERROR_SUCCESS)
+			{
+				MessageBoxW(NULL, L"Failed to load file", APP_TITLE, MB_OK | MB_ICONSTOP);
 			}
 		}
 		else if (IsWithinRect(g_pMenuItems[2], x, y)) // Quit program

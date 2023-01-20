@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CGOL", "CGOL\CGOL.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoardEditor", "BoardEditor\BoardEditor.vcxproj", "{6115F21A-F5A7-4871-9809-44E542BE7EB4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileDialogs", "FileDialogs\FileDialogs.vcxproj", "{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x64.Build.0 = Release|x64
 		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x86.ActiveCfg = Release|Win32
 		{6115F21A-F5A7-4871-9809-44E542BE7EB4}.Release|x86.Build.0 = Release|Win32
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Debug|x64.ActiveCfg = Debug|x64
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Debug|x64.Build.0 = Debug|x64
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Debug|x86.ActiveCfg = Debug|Win32
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Debug|x86.Build.0 = Debug|Win32
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Release|x64.ActiveCfg = Release|x64
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Release|x64.Build.0 = Release|x64
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Release|x86.ActiveCfg = Release|Win32
+		{5D18BEE5-992F-4ED0-9C75-F50DFD17D8A6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
