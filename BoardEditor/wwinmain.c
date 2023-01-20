@@ -32,11 +32,11 @@ INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 
 	while (GetMessageW(&Msg, NULL, 0, 0) > 0)
 	{
-		if (!IsDialogMessageW(hWnd, &Msg))
-		{
+		//if (!IsDialogMessageW(hWnd, &Msg))
+		//{
 			TranslateMessage(&Msg);
 			DispatchMessageW(&Msg);
-		}
+		//}
 	}
 
 	return (INT) Msg.wParam;
