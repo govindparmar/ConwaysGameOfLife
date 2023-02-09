@@ -13,7 +13,7 @@ INT_PTR CALLBACK DialogProc(
 	case WM_DESTROY:
 	{
 		EndDialog(hDlg, (INT_PTR) 0);
-	}
+	} // Note: no break is intentional
 	case WM_INITDIALOG:
 		return (INT_PTR) 1;
 	case WM_COMMAND:

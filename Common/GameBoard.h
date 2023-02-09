@@ -12,7 +12,7 @@
 #pragma pack(push, 1)
 typedef struct
 {
-	uint16_t wSig;     // 0x07 0x02 = Govind Board
+	uint16_t wSig;     // 0x07 0x02 = 'G''B' (alphabetic) = Govind Board
 	uint16_t wVersion; // This version 0x0001
 	uint8_t bGridSize; // Grid size
 	uint32_t wNumberCells; // Number of cells in the file
