@@ -11,3 +11,12 @@
 /Release
 /BoardEditor/Debug
 /BoardEditor/Release
+/FileDialogs/Release/FileDialogs.tlog/CL.read.1.tlog
+/FileDialogs/Release/FileDialogs.tlog/FileDialogs.lastbuildstate
+/FileDialogs/Release/FileDialogs.tlog/link.read.1.tlog
+/FileDialogs/Release/dialogeventhandler.obj
+/FileDialogs/Release/FileDialogs.iobj
+/FileDialogs/Release/FileDialogs.ipdb
+/FileDialogs/Release/opengglfile.obj
+/FileDialogs/Release/savegglfile.obj
+/FileDialogs/Release/vc143.pdb
