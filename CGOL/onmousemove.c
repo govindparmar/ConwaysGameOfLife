@@ -14,6 +14,7 @@ VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFla
 		//	SIZE_T i;
 			// 2: Number of CURRENT menu items
 			BOOL fWeGood = FALSE;
+
 			if (IsWithinRect(g_pMenuItems[0], x, y))
 			{
 				SetBkColor(g_hDC, crBkgnd);

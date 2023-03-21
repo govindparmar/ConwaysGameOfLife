@@ -34,7 +34,6 @@ DWORD WINAPI OpenBoard(_In_ HWND hWnd)
 	}
 
 cleanup:
-
 	if (hInstDLL != NULL)
 	{
 		FreeLibrary(hInstDLL);

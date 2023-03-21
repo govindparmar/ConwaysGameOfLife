@@ -1,6 +1,6 @@
 #include "BE.h"
 
-/* Deprecated, from an earlier design of the file format where the entire grid was packed into a bit matrix
+/* Deprecated, from an earlier prototype of the file format where the entire grid was packed into a bit matrix
 
 SIZE_T WINAPI GetTotalBytesNeeded()
 {

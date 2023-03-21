@@ -41,6 +41,10 @@ VOID WINAPI InitializeGameGrid(_In_ HWND hWnd);
 
 _Ret_range_(FALSE, TRUE)
 
+BOOL WINAPI IsPointWithinRect(_In_ RECT rect, _In_ POINT p);
+
+_Ret_range_(FALSE, TRUE)
+
 BOOL WINAPI IsWithinRect(_In_ RECT rect, _In_ INT x, _In_ INT y);
 BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND hWnd); // 2nd param for GetClientRect call;
 VOID WINAPI MenuScreen();
@@ -48,11 +52,11 @@ VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat);
 VOID WINAPI OnClose(_In_ HWND hWnd);
 VOID WINAPI OnDestroy(_In_ HWND hWnd);
 BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
-VOID WINAPI OnLButtonDown(_In_ HWND hwnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
+VOID WINAPI OnLButtonDown(_In_ HWND hwnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT uFlags);
 VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
 DWORD WINAPI OpenBoard(_In_ HWND hWnd);
 VOID WINAPI OnPaint(_In_ HWND hWnd);
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
-VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime);
+VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ UINT_PTR uID, _In_ DWORD dwTime);
 LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);
 INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ INT nShowCmd);

@@ -2,7 +2,7 @@
 
 BOOL g_fTouched = FALSE;
 
-VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT keyFlags)
+VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT uFlags)
 {
 	INT xCell, yCell;
 	BOOL fRedraw = FALSE;

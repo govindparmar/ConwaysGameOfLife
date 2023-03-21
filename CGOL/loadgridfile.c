@@ -26,7 +26,7 @@ BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND
 		goto cleanup;
 	}
 
-	if (liSize.LowPart < sizeof(BOARDFILEHEADER)) // FIle too small to hold a file header of this type is obviosly not valid
+	if (liSize.LowPart < sizeof(BOARDFILEHEADER)) // FIle too small to hold a file header is obviously not valid
 	{
 		dwError = ERROR_INVALID_DATA; 
 		goto cleanup;

@@ -1,7 +1,6 @@
 #include "DialogEventHandler.h"
 #include <Windows.h>
 
-// This code snippet demonstrates how to work with the common file dialog interface
 _Success_(SUCCEEDED(return))
 
 HRESULT WINAPI OpenGGLFile(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName)

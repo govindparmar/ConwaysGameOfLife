@@ -28,7 +28,7 @@ BOOL WINAPI SaveBoardToFile(_In_ BOOL fSkipNamingIfPossible)
 	if (NULL == SaveGGLFile)
 	{
 		dwError = GetLastError();
-		MessageBoxW(NULL, L"Could not find the procedure 'OpenGGLFile' in the library FileDialogs.dll", APP_TITLE, MB_OK | MB_ICONSTOP);
+		MessageBoxW(NULL, L"Could not find the procedure 'SaveGGLFile' in the library FileDialogs.dll", APP_TITLE, MB_OK | MB_ICONSTOP);
 		FreeLibrary(hInstDLL);
 		SetLastError(dwError);
 		return FALSE;

@@ -6,7 +6,7 @@ BOOL g_fGameRunning = FALSE;
 VOID CALLBACK TimerProc(
 	_In_ HWND hWnd, 
 	_In_ UINT uMsg, 
-	_In_ UINT_PTR idEvent, 
+	_In_ UINT_PTR uID, 
 	_In_ DWORD dwTime
 )
 {

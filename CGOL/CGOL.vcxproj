@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="initializegamegrid.c" />
+    <ClCompile Include="ispointwithinrect.c" />
     <ClCompile Include="iswithinrect.c" />
     <ClCompile Include="loadgridfile.c" />
     <ClCompile Include="menuscreen.c" />
