@@ -139,7 +139,6 @@
     <ClCompile Include="dialogproc.c" />
     <ClCompile Include="drawgrid.c" />
     <ClCompile Include="enumchildproc.c" />
-    <ClCompile Include="gettotalbytesneeded.c" />
     <ClCompile Include="onclose.c" />
     <ClCompile Include="oncommand.c" />
     <ClCompile Include="oncreate.c" />
