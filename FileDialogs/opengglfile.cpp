@@ -6,12 +6,12 @@ _Success_(SUCCEEDED(return))
 HRESULT WINAPI OpenGGLFile(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName)
 {
     // CoCreate the File Open Dialog object.
-    IFileDialog *pfd = NULL;
-    HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pfd));
+    IFileDialog *pfd = nullptr;
+    HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pfd));
     if (SUCCEEDED(hr))
     {
         // Create an event handling object, and hook it up to the dialog.
-        IFileDialogEvents *pfde = NULL;
+        IFileDialogEvents *pfde = nullptr;
         hr = CDialogEventHandler_CreateInstance(IID_PPV_ARGS(&pfde));
         if (SUCCEEDED(hr))
         {
@@ -43,7 +43,7 @@ HRESULT WINAPI OpenGGLFile(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName)
                                 if (SUCCEEDED(hr))
                                 {
                                     // Show the dialog
-                                    hr = pfd->Show(NULL);
+                                    hr = pfd->Show(nullptr);
                                     if (SUCCEEDED(hr))
                                     {
                                         // Obtain the result, once the user clicks the 'Open' button.
@@ -53,7 +53,7 @@ HRESULT WINAPI OpenGGLFile(_Out_writes_z_(MAX_PATH) WCHAR *pOutFileName)
                                         if (SUCCEEDED(hr))
                                         {
                                             // We are just going to print out the name of the file for sample sake.
-                                            PWSTR pszFilePath = NULL;
+                                            PWSTR pszFilePath = nullptr;
                                             hr = psiResult->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
                                             if (SUCCEEDED(hr))
                                             {

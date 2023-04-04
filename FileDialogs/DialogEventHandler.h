@@ -70,4 +70,6 @@ private:
     long _cRef;
 };
 
-HRESULT WINAPI CDialogEventHandler_CreateInstance(REFIID riid, void **ppv);
+_Success_(SUCCEEDED(return))
+
+HRESULT WINAPI CDialogEventHandler_CreateInstance(_In_ REFIID riid, _In_ LPVOID *ppv);
