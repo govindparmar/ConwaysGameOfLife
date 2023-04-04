@@ -1,6 +1,6 @@
 #include "CGOL.h"
 
-// Convenient helper method to determine if a point falls within the boundaries of a certain RECT
+// Convenient helper method to determine if an (x,y) coordinate falls within the boundaries of a certain RECT
 
 _Ret_range_(FALSE, TRUE)
 
