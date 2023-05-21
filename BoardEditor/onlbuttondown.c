@@ -11,7 +11,7 @@ VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _I
 	xCell = (x / CELLSIZE);
 	yCell = (y / CELLSIZE);
 
-	if (xCell < GRIDSIZE && yCell < GRIDSIZE) // Should always be true if window is drawn correctly
+	if (xCell < GRIDSIZE && yCell < GRIDSIZE) // Sanity check - Should always be true if window is drawn correctly
 	{
 		if (g_nCells[xCell][yCell])
 		{
