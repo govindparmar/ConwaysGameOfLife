@@ -103,7 +103,7 @@ VOID WINAPI OnCommand(
 	if (g_wszFileName[0] != L'\0')
 	{
 		WCHAR wszTitle[MAX_PATH + 100];
-		StringCchPrintfW(wszTitle, MAX_PATH + 100, L"%s - %s %c", APP_TITLE, g_wszFileName, g_fTouched ? L'*' : L'\0');
+		StringCchPrintfW(wszTitle, MAX_PATH + 100, APP_TITLE L"- %s %c", g_wszFileName, g_fTouched ? L'*' : L'\0');
 		SetWindowTextW(hWnd, wszTitle);
 	}
 
