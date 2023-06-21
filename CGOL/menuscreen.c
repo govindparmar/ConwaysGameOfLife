@@ -43,5 +43,4 @@ VOID WINAPI MenuScreen()
 	rMenuItem.bottom += 30;
 	ExtTextOutW(g_hDC, 10, 70, ETO_CLIPPED , &rMenuItem, L"Q = Quit", 8, NULL);
 	CopyMemory(&g_pMenuItems[2], &rMenuItem, sizeof(RECT));
-	
 }

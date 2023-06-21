@@ -42,8 +42,8 @@ DWORD WINAPI SerializeGrid(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName)
 			{
 				if (g_nCells[i][i2])
 				{
-					pCoords[i3].bX = (uint8_t)i;
-					pCoords[i3].bY = (uint8_t)i2;
+					pCoords[i3].bX = (UINT8)i;
+					pCoords[i3].bY = (UINT8)i2;
 					i3++;
 				}
 			}
@@ -64,7 +64,13 @@ DWORD WINAPI SerializeGrid(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName)
 		WriteFile(hFile, &pCoords[i], sizeof(BOARDCOORDS), &dwWritten, NULL);
 	}
 
+	HeapFree(hHeap, 0, pCoords);
+	pCoords = NULL;
+	FlushFileBuffers(hFile);
+	CloseHandle(hFile);
+	hFile = INVALID_HANDLE_VALUE;
 	dwError = ERROR_SUCCESS;
+
 
 cleanup:
 	if (pCoords != NULL)

@@ -9,8 +9,6 @@ VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFla
 			COLORREF crText = RGB(0xFF, 0x02, 0x0A);
 			COLORREF crInactiveText = RGB(0, 0xFF, 0);
 			COLORREF crBkgnd = RGB(0x09, 0x09, 0x09);
-			HBRUSH hbrSMIText = CreateSolidBrush(crText);
-			HBRUSH hbrSMIBack = CreateSolidBrush(crBkgnd);
 			BOOL fWeGood = FALSE;
 
 			if (IsWithinRect(g_pMenuItems[0], x, y))
@@ -37,8 +35,8 @@ VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFla
 			}
 			else if (IsWithinRect(g_pMenuItems[2], x, y))
 			{
-				SetBkColor(g_hDC, RGB(0x09, 0x09, 0x09));
-				SetTextColor(g_hDC, RGB(0xFF, 0x02, 0x0A));
+				SetBkColor(g_hDC, crBkgnd);
+				SetTextColor(g_hDC, crText);
 				TextOutW(g_hDC, 10, 70, L"Q = Quit", 8);
 				SetBkColor(g_hDC, 0);
 				SetTextColor(g_hDC, crInactiveText);
