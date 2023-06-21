@@ -13,7 +13,7 @@
 #define B4TODW_LE(c0, c1, c2, c3) (DWORD) ((DWORD) (BYTE) (c0) | ((DWORD) (BYTE) (c1) << 8) | ((DWORD) (BYTE) (c2) << 16) | ((DWORD) (BYTE) (c3) << 24))
 #endif
 #pragma pack(push, 1)
-typedef struct
+typedef struct _BOARDFILEHEADER
 {
 	WORD wSig;     // 0x07 0x02 = 'G''B' (alphabetic) = Govind Board
 	WORD wVersion; // This version 0x0001
@@ -21,7 +21,7 @@ typedef struct
 	DWORD wNumberCells; // Number of cells in the file
 } BOARDFILEHEADER, *PBOARDFILEHEADER;
 
-typedef struct
+typedef struct _BOARDCOORDS
 {
 	BYTE bX;
 	BYTE bY;
