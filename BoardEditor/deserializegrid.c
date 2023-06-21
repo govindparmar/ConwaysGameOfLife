@@ -20,9 +20,9 @@ DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *ws
 	}
 
 	GetFileSizeEx(hFile, &liSize);
-	if (liSize.HighPart || (liSize.LowPart & 0xFFF00000)) // WAAAY too large to be a valid grid file
+	if (liSize.HighPart || (liSize.LowPart & 0xFFE00000)) // > 2MB - WAAAY too large to be a valid grid file
 	{
-		dwError = ERROR_INVALID_DATA;
+		dwError = ERROR_FILE_TOO_LARGE;
 		goto cleanup;
 	}
 
