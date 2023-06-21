@@ -20,7 +20,6 @@ VOID WINAPI OnLButtonDown(_In_ HWND hWnd, _In_ BOOL fDoubleClick, _In_ INT x, _I
 		else
 		{
 			g_nCells[xCell][yCell] = 1;
-			
 		}
 		
 		g_fTouched = TRUE;

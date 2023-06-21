@@ -11,8 +11,6 @@ VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFla
 			COLORREF crBkgnd = RGB(0x09, 0x09, 0x09);
 			HBRUSH hbrSMIText = CreateSolidBrush(crText);
 			HBRUSH hbrSMIBack = CreateSolidBrush(crBkgnd);
-		//	SIZE_T i;
-			// 2: Number of CURRENT menu items
 			BOOL fWeGood = FALSE;
 
 			if (IsWithinRect(g_pMenuItems[0], x, y))
@@ -43,7 +41,7 @@ VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFla
 				SetTextColor(g_hDC, RGB(0xFF, 0x02, 0x0A));
 				TextOutW(g_hDC, 10, 70, L"Q = Quit", 8);
 				SetBkColor(g_hDC, 0);
-				SetTextColor(g_hDC, RGB(0, 255, 0));
+				SetTextColor(g_hDC, crInactiveText);
 				TextOutW(g_hDC, 10, 10, L"G = New Game", 12);
 				TextOutW(g_hDC, 10, 40, L"L = Load Game Grid", 18);
 				fWeGood = FALSE;
@@ -53,13 +51,12 @@ VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFla
 				if (!fWeGood)
 				{
 					SetBkColor(g_hDC, 0);
-					SetTextColor(g_hDC, RGB(0, 255, 0));
+					SetTextColor(g_hDC, crInactiveText);
 					TextOutW(g_hDC, 10, 10, L"G = New Game", 12);
 					TextOutW(g_hDC, 10, 70, L"Q = Quit", 8);
 					fWeGood = TRUE;
 				}
-			}
-			
+			}	
 		}
 	}
 }

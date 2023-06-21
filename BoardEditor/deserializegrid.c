@@ -80,10 +80,6 @@ DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *ws
 	ZeroMemory(g_nCells, sizeof(INT) * GRIDSIZE * GRIDSIZE);
 	for (i = 0; i < bfh.wNumberCells; i++)
 	{
-		/*WCHAR wMsg[70];
-		StringCchPrintfW(wMsg, 70, L"%hhu, %hhu", pCoords[i].bX, pCoords[i].bY);
-		MessageBoxW(NULL, wMsg, APP_TITLE, MB_OK | MB_ICONASTERISK);*/
-
 		g_nCells[pCoords[i].bX][pCoords[i].bY] = 1;
 	}
 	GetClientRect(hWnd, &rect);

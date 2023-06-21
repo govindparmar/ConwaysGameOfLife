@@ -1,3 +1,6 @@
+/** 
+ * Definitions, macro functions, and structures common to both CGOL and BoardEditor for drawing the game board.
+ */
 #pragma once
 #include <stdint.h>
 #ifndef GRIDSIZE

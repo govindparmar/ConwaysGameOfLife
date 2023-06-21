@@ -1,6 +1,6 @@
 #include "CGOL.h"
 
-BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND hWnd) // 2nd param for GetClientRect call
+BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND hWnd) // hWnd for GetClientRect call
 {
 	CONST HANDLE hHeap = GetProcessHeap();
 	DWORD dwError = ULONG_MAX, dwRead;
