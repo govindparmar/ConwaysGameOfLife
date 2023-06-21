@@ -61,12 +61,18 @@ VOID WINAPI OnCommand(
 
 	if (ID_FILE_SAVE == nID)
 	{
-		SaveBoardToFile(TRUE);
+		if (!SaveBoardToFile(TRUE))
+		{
+			MessageBoxW(NULL, L"Could not save board.", L"Error", MB_OK | MB_ICONSTOP);
+		}
 	}
 
 	if (ID_FILE_SAVEAS == nID)
 	{
-		SaveBoardToFile(FALSE);
+		if (!SaveBoardToFile(FALSE))
+		{
+			MessageBoxW(NULL, L"Could not save board.", L"Error", MB_OK | MB_ICONSTOP);
+		}
 	}
 
 	if (ID_FILE_CLOSE == nID)

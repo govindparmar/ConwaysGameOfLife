@@ -13,6 +13,10 @@
 #define B4TODW_LE(c0, c1, c2, c3) (DWORD) ((DWORD) (BYTE) (c0) | ((DWORD) (BYTE) (c1) << 8) | ((DWORD) (BYTE) (c2) << 16) | ((DWORD) (BYTE) (c3) << 24))
 #endif
 #pragma pack(push, 1)
+
+#define LOW_ORDER_BIT_MASK 0xFFE00000
+#define GGL_FILE_MAGIC MAKEWORD(0x07, 0x02)
+
 typedef struct _BOARDFILEHEADER
 {
 	WORD wSig;     // 0x07 0x02 = 'G''B' (alphabetic) = Govind Board

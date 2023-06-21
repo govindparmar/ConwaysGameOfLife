@@ -1,5 +1,8 @@
 #include "BE.h"
 
+_Success_(ERROR_SUCCESS == return)
+_Check_return_
+
 DWORD WINAPI SerializeGrid(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName)
 {
 	CONST HANDLE hHeap = GetProcessHeap();
@@ -10,7 +13,7 @@ DWORD WINAPI SerializeGrid(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName)
 	BOARDCOORDS *pCoords = NULL;
 	DWORD dwError = ULONG_MAX, dwWritten = 0;
 
-	bfh.wSig = MAKEWORD(0x07, 0x02);
+	bfh.wSig = GGL_FILE_MAGIC;
 	bfh.wVersion = 0x0001;
 	bfh.bGridSize = GRIDSIZE;
 

@@ -1,5 +1,7 @@
 #include "BE.h"
 
+_Post_satisfies_(!g_fTouched && L'\0' == g_wszFileName[0])
+
 VOID WINAPI ResetBoardAndFile(_In_ HWND hWnd)
 {
 	RECT rect;

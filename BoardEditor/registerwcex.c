@@ -2,6 +2,9 @@
 
 CONST WCHAR g_wszClassName[] = L"CGOL_BoardEditor_GovindParmar";
 
+_Success_(return)
+_Check_return_
+
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance)
 {
 	WNDCLASSEXW wcex;

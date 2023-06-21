@@ -1,5 +1,8 @@
 #include "CGOL.h"
 
+_Success_(return)
+_Check_return_
+
 ATOM WINAPI RegisterWCEX(
 	_In_ HINSTANCE hInstance
 )

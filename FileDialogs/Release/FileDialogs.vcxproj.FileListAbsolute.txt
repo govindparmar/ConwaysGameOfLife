@@ -1,0 +1,2 @@
+C:\Users\par0467\Source\Repos\ConwaysGameOfLife\Release\FileDialogs.dll.lastcodeanalysissucceeded
+C:\Users\par0467\Source\Repos\ConwaysGameOfLife\FileDialogs\Release\NativeCodeAnalysis.read.1.tlog

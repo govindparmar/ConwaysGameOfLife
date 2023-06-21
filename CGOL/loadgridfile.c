@@ -1,5 +1,9 @@
 #include "CGOL.h"
 
+_Success_(return)
+_Check_return_
+_Ret_range_(FALSE, TRUE)
+
 BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND hWnd) // hWnd for GetClientRect call
 {
 	CONST HANDLE hHeap = GetProcessHeap();
@@ -20,13 +24,13 @@ BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND
 	}
 	
 	GetFileSizeEx(hFile, &liSize);
-	if (liSize.HighPart || (liSize.LowPart & 0xFFF00000))
+	if (liSize.HighPart || (liSize.LowPart & LOW_ORDER_BIT_MASK))
 	{
 		dwError = ERROR_FILE_TOO_LARGE;
 		goto cleanup;
 	}
 
-	if (liSize.LowPart < sizeof(BOARDFILEHEADER)) // FIle too small to hold a file header is obviously not valid
+	if (liSize.LowPart < sizeof(BOARDFILEHEADER)) // File too small to hold a file header is obviously not valid
 	{
 		dwError = ERROR_INVALID_DATA; 
 		goto cleanup;
@@ -38,7 +42,7 @@ BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND
 		goto cleanup;
 	}
 
-	if (bfh.wSig != MAKEWORD(0x07, 0x02))
+	if (bfh.wSig != GGL_FILE_MAGIC)
 	{
 		dwError = ERROR_INVALID_DATA;
 		goto cleanup;
