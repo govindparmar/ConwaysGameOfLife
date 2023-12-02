@@ -34,9 +34,7 @@ VOID WINAPI MenuScreen()
 	SelectObject(g_hDC, g_hbrCell);
 	SetBkColor(g_hDC, 0);
 	SetTextColor(g_hDC, RGB(0, 0xFF, 0));
-	//SetText
-	//TextOutW(g_hDC, 10, 10, L"G = New Game", 12);
-	//TextOutW(g_hDC, 10, 40, L"Q = Quit", 8);
+	
 	ExtTextOutW(g_hDC, 10, 10, ETO_CLIPPED , &rMenuItem, L"G = New Game", 12, NULL);
 	CopyMemory(&g_pMenuItems[0], &rMenuItem, sizeof(RECT));
 	rMenuItem.bottom += 30;

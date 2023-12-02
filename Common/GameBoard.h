@@ -1,5 +1,8 @@
+/** 
+ * Definitions, macro functions, and structures common to both CGOL and BoardEditor for drawing the game board.
+ */
 #pragma once
-#include <stdint.h>
+#include <Windows.h>
 #ifndef GRIDSIZE
 #define GRIDSIZE 50
 #endif
@@ -7,20 +10,24 @@
 #define CELLSIZE 13
 #endif
 #ifndef B4TODW_LE
-#define B4TODW_LE(c0, c1, c2, c3) (uint32_t) ((uint32_t) (uint8_t) (c0) | ((uint32_t) (uint8_t) (c1) << 8) | ((uint32_t) (uint8_t) (c2) << 16) | ((uint32_t) (uint8_t) (c3) << 24))
+#define B4TODW_LE(c0, c1, c2, c3) (DWORD) ((DWORD) (BYTE) (c0) | ((DWORD) (BYTE) (c1) << 8) | ((DWORD) (BYTE) (c2) << 16) | ((DWORD) (BYTE) (c3) << 24))
 #endif
 #pragma pack(push, 1)
-typedef struct
+
+#define LOW_ORDER_BIT_MASK 0xFFE00000
+#define GGL_FILE_MAGIC MAKEWORD(0x07, 0x02)
+
+typedef struct _BOARDFILEHEADER
 {
-	uint16_t wSig;     // 0x07 0x02 = 'G''B' (alphabetic) = Govind Board
-	uint16_t wVersion; // This version 0x0001
-	uint8_t bGridSize; // Grid size
-	uint32_t wNumberCells; // Number of cells in the file
+	WORD wSig;     // 0x07 0x02 = 'G''B' (alphabetic) = Govind Board
+	WORD wVersion; // This version 0x0001
+	BYTE bGridSize; // Grid size
+	DWORD wNumberCells; // Number of cells in the file
 } BOARDFILEHEADER, *PBOARDFILEHEADER;
 
-typedef struct
+typedef struct _BOARDCOORDS
 {
-	uint8_t bX;
-	uint8_t bY;
+	BYTE bX;
+	BYTE bY;
 } BOARDCOORDS, *PBOARDCOORDS;
 #pragma pack(pop)

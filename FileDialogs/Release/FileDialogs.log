@@ -1,9 +1,0 @@
-﻿  dialogeventhandler.cpp
-  opengglfile.cpp
-  savegglfile.cpp
-     Creating library D:\Code\ConwaysGameOfLife\Release\FileDialogs.lib and object D:\Code\ConwaysGameOfLife\Release\FileDialogs.exp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 37 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  FileDialogs.vcxproj -> D:\Code\ConwaysGameOfLife\Release\FileDialogs.dll

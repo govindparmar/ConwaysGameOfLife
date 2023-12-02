@@ -48,6 +48,11 @@ BOOL WINAPI IsPointWithinRect(_In_ RECT rect, _In_ POINT p);
 _Ret_range_(FALSE, TRUE)
 
 BOOL WINAPI IsWithinRect(_In_ RECT rect, _In_ INT x, _In_ INT y);
+
+_Success_(return)
+_Check_return_
+_Ret_range_(FALSE, TRUE)
+
 BOOL WINAPI LoadGridFile(_In_reads_or_z_(MAX_PATH) WCHAR *wszFileName, _In_ HWND hWnd); // 2nd param for GetClientRect call;
 VOID WINAPI MenuScreen();
 VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat);
@@ -56,8 +61,16 @@ VOID WINAPI OnDestroy(_In_ HWND hWnd);
 BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
 VOID WINAPI OnLButtonDown(_In_ HWND hwnd, _In_ BOOL fDoubleClick, _In_ INT x, _In_ INT y, _In_ UINT uFlags);
 VOID WINAPI OnMouseMove(_In_ HWND hWnd, _In_ INT x, _In_ INT y, _In_ UINT keyFlags);
+
+_Success_(ERROR_SUCCESS == return)
+_Check_return_
+
 DWORD WINAPI OpenBoard(_In_ HWND hWnd);
 VOID WINAPI OnPaint(_In_ HWND hWnd);
+
+_Success_(return)
+_Check_return_
+
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
 VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ UINT_PTR uID, _In_ DWORD dwTime);
 LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);

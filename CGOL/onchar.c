@@ -29,14 +29,6 @@ VOID WINAPI OnChar(_In_ HWND hWnd, _In_ WCHAR wc, _In_ INT nRepeat)
 	case L'L':
 	case L'l': // Load grid file
 	{
-		/*WCHAR wszFileName[MAX_PATH];
-		if (SUCCEEDED(BasicFileOpen(wszFileName)))
-		{
-			if (LoadGridFile(wszFileName, hWnd))
-			{
-				g_fGameRunning = TRUE;
-			}
-		}*/
 		if (OpenBoard(hWnd) != ERROR_SUCCESS)
 		{
 			MessageBoxW(NULL, L"Failed to load file", APP_TITLE, MB_OK | MB_ICONSTOP);

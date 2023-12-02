@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dialogeventhandler.cpp" />
+    <ClCompile Include="dllmain.c" />
     <ClCompile Include="opengglfile.cpp" />
     <ClCompile Include="savegglfile.cpp" />
   </ItemGroup>

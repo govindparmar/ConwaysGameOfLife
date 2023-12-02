@@ -1,5 +1,8 @@
 #include "BE.h"
 
+_Success_(ERROR_SUCCESS == return)
+_Check_return_
+
 DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *wszFileName)
 {
 	CONST HANDLE hHeap = GetProcessHeap();
@@ -20,9 +23,9 @@ DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *ws
 	}
 
 	GetFileSizeEx(hFile, &liSize);
-	if (liSize.HighPart || (liSize.LowPart & 0xFFF00000)) // WAAAY too large to be a valid grid file
+	if (liSize.HighPart || (liSize.LowPart & LOW_ORDER_BIT_MASK)) // > 2MB - WAAAY too large to be a valid grid file
 	{
-		dwError = ERROR_INVALID_DATA;
+		dwError = ERROR_FILE_TOO_LARGE;
 		goto cleanup;
 	}
 
@@ -80,10 +83,6 @@ DWORD WINAPI DeserializeGrid(_In_ HWND hWnd, _In_reads_or_z_(MAX_PATH) WCHAR *ws
 	ZeroMemory(g_nCells, sizeof(INT) * GRIDSIZE * GRIDSIZE);
 	for (i = 0; i < bfh.wNumberCells; i++)
 	{
-		/*WCHAR wMsg[70];
-		StringCchPrintfW(wMsg, 70, L"%hhu, %hhu", pCoords[i].bX, pCoords[i].bY);
-		MessageBoxW(NULL, wMsg, APP_TITLE, MB_OK | MB_ICONASTERISK);*/
-
 		g_nCells[pCoords[i].bX][pCoords[i].bY] = 1;
 	}
 	GetClientRect(hWnd, &rect);

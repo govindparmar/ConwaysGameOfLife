@@ -2,11 +2,14 @@
 
 typedef HRESULT(WINAPI *pOpenGGLFile)(_Out_writes_z_(MAX_PATH) WCHAR *wszFileName);
 
+_Success_(ERROR_SUCCESS == return)
+_Check_return_
+
 DWORD WINAPI OpenBoard(_In_ HWND hWnd)
 {
 	HINSTANCE hInstDLL = NULL;
 	pOpenGGLFile OpenGGLFile = NULL;
-	DWORD dwError;// = ERROR_SUCCESS;
+	DWORD dwError;
 	WCHAR wszFileName[MAX_PATH];
 
 	hInstDLL = LoadLibraryW(L"FileDialogs.dll");
@@ -32,7 +35,6 @@ DWORD WINAPI OpenBoard(_In_ HWND hWnd)
 			g_fGameRunning = TRUE;
 		}
 	}
-
 	dwError = ERROR_SUCCESS;
 cleanup:
 	if (hInstDLL != NULL)

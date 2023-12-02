@@ -2,6 +2,10 @@
 
 typedef HRESULT(WINAPI *pSaveGGLFile)(_Out_writes_z_(MAX_PATH) WCHAR *wszFileName);
 
+_Success_(return)
+_Check_return_
+_Post_satisfies_(!g_fTouched)
+
 BOOL WINAPI SaveBoardToFile(_In_ BOOL fSkipNamingIfPossible)
 {
 	HINSTANCE hInstDLL = NULL;

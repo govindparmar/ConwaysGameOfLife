@@ -1,5 +1,8 @@
 #include "CGOL.h"
 
+_Success_(return)
+_Check_return_
+
 ATOM WINAPI RegisterWCEX(
 	_In_ HINSTANCE hInstance
 )
@@ -8,7 +11,6 @@ ATOM WINAPI RegisterWCEX(
 	ZeroMemory(&wcex, sizeof(WNDCLASSEXW));
 	
 	wcex.cbSize = sizeof(WNDCLASSEXW);
-	//wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 	wcex.hCursor = LoadCursorW(NULL, IDC_ARROW);
 	wcex.hIcon = 
 	wcex.hIconSm = LoadIconW(NULL, IDI_APPLICATION);

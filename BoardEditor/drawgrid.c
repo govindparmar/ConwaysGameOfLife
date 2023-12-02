@@ -4,6 +4,9 @@ HBRUSH g_hbrFilled = NULL;
 HBRUSH g_hbrEmpty = NULL;
 HBRUSH g_hbrEmptyAlternate = NULL;
 
+_Success_(TRUE)
+_Post_satisfies_(g_hbrFilled != NULL && g_hbrEmpty != NULL && g_hbrEmptyAlternate != NULL)
+
 VOID WINAPI DrawGrid(_In_ HWND hWnd)
 {
 	HDC hDC = GetDC(hWnd);
