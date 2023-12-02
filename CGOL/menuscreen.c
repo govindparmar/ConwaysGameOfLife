@@ -29,7 +29,6 @@ VOID WINAPI MenuScreen()
 		ExitProcess(ERROR_OUTOFMEMORY);
 	}
 
-
 	SelectObject(g_hDC, g_hbrBackground);
 	Rectangle(g_hDC, 0, 0, GRIDSIZE * CELLSIZE, GRIDSIZE * CELLSIZE);
 	SelectObject(g_hDC, g_hbrCell);
@@ -46,5 +45,4 @@ VOID WINAPI MenuScreen()
 	rMenuItem.bottom += 30;
 	ExtTextOutW(g_hDC, 10, 70, ETO_CLIPPED , &rMenuItem, L"Q = Quit", 8, NULL);
 	CopyMemory(&g_pMenuItems[2], &rMenuItem, sizeof(RECT));
-	
 }

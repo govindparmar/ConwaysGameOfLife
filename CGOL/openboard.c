@@ -6,7 +6,7 @@ DWORD WINAPI OpenBoard(_In_ HWND hWnd)
 {
 	HINSTANCE hInstDLL = NULL;
 	pOpenGGLFile OpenGGLFile = NULL;
-	DWORD dwError = ERROR_SUCCESS;
+	DWORD dwError;// = ERROR_SUCCESS;
 	WCHAR wszFileName[MAX_PATH];
 
 	hInstDLL = LoadLibraryW(L"FileDialogs.dll");
@@ -33,6 +33,7 @@ DWORD WINAPI OpenBoard(_In_ HWND hWnd)
 		}
 	}
 
+	dwError = ERROR_SUCCESS;
 cleanup:
 	if (hInstDLL != NULL)
 	{

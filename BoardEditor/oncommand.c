@@ -100,7 +100,7 @@ VOID WINAPI OnCommand(
 		DialogBoxW(GetModuleHandleW(NULL), MAKEINTRESOURCEW(IDD_ABOUT), hWnd, DialogProc);
 	}
 
-	if (g_wszFileName[0] != L'\0')
+	if (g_wszFileName[0]/* != L'\0'*/)
 	{
 		WCHAR wszTitle[MAX_PATH + 100];
 		StringCchPrintfW(wszTitle, MAX_PATH + 100, APP_TITLE L"- %s %c", g_wszFileName, g_fTouched ? L'*' : L'\0');
